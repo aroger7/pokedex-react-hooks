@@ -1,0 +1,16 @@
+.pokelist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}

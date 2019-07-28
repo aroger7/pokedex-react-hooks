@@ -1,0 +1,11 @@
+.pokedetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}

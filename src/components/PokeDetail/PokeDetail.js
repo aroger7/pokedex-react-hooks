@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useWindowSize from 'hooks/common/useWindowSize';
 import './styles/PokeDetail.scss';
 
 const PokeDetail = ({ pokemon, onClose }) => {
+  const { width, height } = useWindowSize();
   return (
-    <div className="pokedetail">
+    <div className="pokedetail" style={{ width, height }}>
       <button
         className="pokedetail__button"
         onClick={onClose}

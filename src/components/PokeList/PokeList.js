@@ -31,22 +31,19 @@ const PokeList = () => {
 
   return (
     <ul className="pokelist">
-      {pokemon.map(p => (
-        <li className="pokelist__item">
-          {selectedPokemon && selectedPokemon.name === p.name
-            ? <PokeDetail pokemon={selectedPokemon} onClose={handleSelectedClose} /> 
-            : (
-              <button 
-                className="pokelist__button"
-                key={p.name} 
-                onClick={() => handleSelect(p)}
-              >
-                  {p.nameCapitalized}
-              </button>
-            )
-          }
-        </li>
-      ))}
+      {!selectedPokemon 
+        ? pokemon.map(p => (
+          <li className="pokelist__item">
+            <button 
+              className="pokelist__button"
+              key={p.name} 
+              onClick={() => handleSelect(p)}
+            >
+                {p.nameCapitalized}
+            </button>
+          </li>
+        ))
+        : <PokeDetail pokemon={selectedPokemon} onClose={handleSelectedClose} /> }
     </ul>
   );
 };
